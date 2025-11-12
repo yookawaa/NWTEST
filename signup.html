@@ -155,15 +155,14 @@
               console.log("レスポンス:", res);
 
               // --- HTTP 200の場合 ---
-              if (res.status === 200 && res.data.result === "success") {
-                // 登録成功
-                message.value = res.data.message;
+              if (res.status === 200) {
+                // 登録成功（HTTP 200ならOKとみなす）
+                message.value = res.data.message || "登録が完了しました。";
                 dialog.value = true;
 
                 // 1秒後にログイン画面へ遷移
                 setTimeout(() => (window.location.href = "index.html"), 1000);
               } else {
-                // 登録失敗
                 message.value = res.data.message || "登録に失敗しました。";
                 dialog.value = true;
               }
