@@ -21,13 +21,13 @@ createApp({
       };
 
       // 実際のAPI URLに置き換えてください
-      const response = await axios.post('', param);
+      const response = await axios.post('https://m3h-ookawa-container-vnet.ashybush-2e9d75a1.japaneast.azurecontainerapps.io/api/INSERT', param);
       console.log(response.data);
     };
 
     const readData = async () => {
       // 実際のAPI URLに置き換えてください
-      const response = await axios.get('');
+      const response = await axios.get('https://m3h-ookawa-container-vnet.ashybush-2e9d75a1.japaneast.azurecontainerapps.io/api/SELECT');
       console.log(response.data);
       dataList.value = response.data.List;
     };
