@@ -144,7 +144,7 @@
               console.log("レスポンス:", res);
 
               // --- HTTPステータス200は成功として扱う ---
-              if (res.status === 200 && res.data.result === "success") {
+              if (res.status === 200) {
                 // 認証成功
                 message.value = res.data.message;
                 dialog.value = true;
